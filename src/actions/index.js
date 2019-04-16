@@ -10,17 +10,17 @@
 import axios from "axios";
 
 export const FETCH = "FETCH";
-export const SUCCESSFUL_HUNT = "SUCCESSFUL_HUNT";
-export const RETURNED_WITH_NOTHING = "RETURNED_WITH_NOTHING";
+export const SUCCESSFUL_SEARCH = "SUCCESSFUL_RETURN";
+export const UNSUCCESSFUL_SEARCH = "UNSUCCESSFUL_RETURN";
 
-export const hunt = () => dispatch => {
-  console.log("made it here");
+export const search = () => dispatch => {
+  console.log("made it");
   dispatch({ type: FETCH });
   axios
     .get(`https://swapi.co/api/people/`)
     .then(res => {
       console.log(res.data.results);
-      dispatch({ type: SUCCESSFUL_HUNT, payload: res.data.results });
+      dispatch({ type: SUCCESSFUL_SEARCH, payload: res.data.results });
     })
-    .catch(err => dispatch({ type: RETURNED_WITH_NOTHING, payload: err }));
+    .catch(err => dispatch({ type: UNSUCCESSFUL_SEARCH, payload: err }));
 };

@@ -1,4 +1,4 @@
-import { FETCH, SUCCESSFUL_HUNT, RETURNED_WITH_NOTHING } from "../actions";
+import { FETCH, SUCCESSFUL_SEARCH, UNSUCCESSFUL_SEARCH } from "../actions";
 
 const initialState = {
   characters: [],
@@ -14,13 +14,13 @@ export const charsReducer = (state = initialState, action) => {
         fetching: true,
         error: null
       };
-    case SUCCESSFUL_HUNT:
+    case SUCCESSFUL_SEARCH:
       return {
         ...state,
         fetching: false,
         characters: [...state.characters, ...action.payload]
       };
-    case RETURNED_WITH_NOTHING:
+    case UNSUCCESSFUL_SEARCH:
       return {
         ...state,
         fetching: false,

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { CharacterList } from "../components";
-import { hunt } from "../actions";
+import { search } from "../actions";
 
 class CharacterListView extends React.Component {
   constructor() {
@@ -10,7 +10,7 @@ class CharacterListView extends React.Component {
   }
 
   componentDidMount() {
-    this.props.hunt();
+    this.props.search();
   }
 
   render() {
@@ -35,5 +35,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { hunt }
+  { search }
 )(CharacterListView);
