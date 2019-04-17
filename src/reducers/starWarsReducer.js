@@ -6,7 +6,7 @@ const initialState = {
   error: null
 };
 
-export const charsReducer = (state = initialState, action) => {
+const charsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH:
       return {
@@ -30,3 +30,5 @@ export const charsReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default charsReducer;
