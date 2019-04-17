@@ -8,7 +8,8 @@ const initialState = {
 
 
 
-export const charsReducer = (state = initialState, action) => {
+function reducer(state = initialState, action) {
+  console.log("reducer", action);
   switch (action.type) {
     case FETCH:
       return {
@@ -32,3 +33,5 @@ export const charsReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default reducer;
