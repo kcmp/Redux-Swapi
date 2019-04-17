@@ -6,10 +6,7 @@ const initialState = {
   error: null
 };
 
-
-
-function reducer(state = initialState, action) {
-  console.log("reducer", action);
+const charsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH:
       return {
@@ -34,4 +31,4 @@ function reducer(state = initialState, action) {
   }
 };
 
-export default reducer;
+export default charsReducer;
